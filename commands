@@ -31,3 +31,12 @@ google.com
 nslookup
 set type=ns
 google.com
+
+# PING number of packets & size
+ping -n 5 -l 1500 www.google.com
+
+# ping | find the hostname assigned ip address, otherwise ping it as normal
+ping -a 8.8.8.8
+
+# ping force IPV6 to hostname indefenetly 
+ping -t -6 google.com
