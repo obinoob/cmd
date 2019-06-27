@@ -15,3 +15,19 @@ sc queryex type= service state= all
 
 # find running service
 netstat -ano | find /i "listening"
+
+# DNS lookup
+nslookup google.com google.pt
+
+# lookup query to specific DNS server
+nslookup google.com 1.1.1.1
+
+# lookup MX server
+nslookup
+set type=mx
+google.com
+
+# lookup NS server
+nslookup
+set type=ns
+google.com
