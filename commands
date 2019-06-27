@@ -4,6 +4,9 @@ net start
 # list FDQN
 netstat -f
 
+# list active connections listening on a specific port
+netstat -aon |find /i "listening" |find "port"
+
 # find a specific service by name
 sc query | find /n "Service Name"
 
