@@ -1,0 +1,8 @@
+# list running services
+net start
+
+# find a specific service by name
+sc query | find /n "Service Name"
+
+# find running service
+netstat -ano | find /i "listening"
