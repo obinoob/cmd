@@ -4,5 +4,8 @@ net start
 # find a specific service by name
 sc query | find /n "Service Name"
 
+# list all services 
+sc queryex type= service state= all
+
 # find running service
 netstat -ano | find /i "listening"
