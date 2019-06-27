@@ -1,6 +1,9 @@
 # list running services
 net start
 
+# list FDQN
+netstat -f
+
 # find a specific service by name
 sc query | find /n "Service Name"
 
