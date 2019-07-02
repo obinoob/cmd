@@ -40,3 +40,6 @@ ping -a 8.8.8.8
 
 # ping force IPV6 to hostname indefenetly 
 ping -t -6 google.com
+
+# adding vpn powershell
+Add-VpnConnection -Name "VPN Name" -ServerAddress "domain.com" -TunnelType L2TP -L2tpPsk "SharedSecretKey" -Force -AuthenticationMethod Pap -SplitTunneling $True -EncryptionLevel "Optional"
