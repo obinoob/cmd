@@ -32,6 +32,11 @@ nslookup
 set type=ns
 google.com
 
+# reverse lookup
+nslookup
+set type=ptr
+8.8.8.8
+
 # PING number of packets & size
 ping -n 5 -l 1500 www.google.com
 
