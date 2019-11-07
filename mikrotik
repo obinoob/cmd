@@ -1,0 +1,13 @@
+## Using mikrotik tools to debug network connectivity problems ##
+
+## telnet
+system telnet port=53 address=192.168.1.1 routing-table=main
+
+## resolve dns
+put [resolve domain-name=sapo.pt server-port=53 server=192.168.1.1]
+
+## or ##
+put [:resolve sapo.pt server=8.8.4.4]
+
+## adding ethernet 24 interfaces to bridge named sw ##
+for i from=1 to=24 do={/interface bridge port add bridge=sw interface="ether$i"}
