@@ -1,1 +1,2 @@
-
+## Fix Trust-relationship-workstation-primary-domain-failed ##
+Reset-ComputerMachinePassword -Credential (Get-Credential)
