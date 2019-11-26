@@ -1,2 +1,5 @@
 ## Fix Trust-relationship-workstation-primary-domain-failed ##
 Reset-ComputerMachinePassword -Credential (Get-Credential)
+
+## Setup VPN for domain access at login time ##
+Add-VpnConnection -Name Alvoresund -ServerAddress alvoresund.sytes.net -AllUserConnection:$true -SplitTunneling:$true -AuthenticationMethod MSChapv2 -TunnelType "Pptp" -EncryptionLevel Required -PassThru
