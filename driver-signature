@@ -1,0 +1,13 @@
+## DISABLE DRIVER SIGNATURE ##
+
+This is a quick guide to enable unsigned driver installations.
+1. Open a Command Prompt (Run as Administrator)
+
+2. Enter the following command and press Enter:
+BCDEDIT /Set LoadOptions DDISABLE_INTEGRITY_CHECKS
+
+3. If this completes successfully, enter the next command:
+BCDEDIT /Set TESTSIGNING ON
+
+
+4. Once competed, restart the server
