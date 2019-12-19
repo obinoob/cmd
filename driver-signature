@@ -9,5 +9,4 @@ BCDEDIT /Set LoadOptions DDISABLE_INTEGRITY_CHECKS
 3. If this completes successfully, enter the next command:
 BCDEDIT /Set TESTSIGNING ON
 
-
 4. Once competed, restart the server
