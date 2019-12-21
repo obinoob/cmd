@@ -5,7 +5,7 @@ net start
 netstat -f
 
 # list active connections listening on a specific port
-netstat -aon |find /i "listening" |find "port"
+netstat -aon | find /i "listening" | find "port"
 
 # find a specific service by name
 sc query | find /n "Service Name"
@@ -36,6 +36,9 @@ google.com
 nslookup
 set type=ptr
 8.8.8.8
+
+# Get public IP address
+nslookup myip.opendns.com resolver1.opendns.com
 
 # PING number of packets & size
 ping -n 5 -l 1500 www.google.com
