@@ -1,0 +1,4 @@
+## proxmox shell commands
+
+## migrates vm to nodeone where target storage is a pool
+qm migrate 100 nodeone --targetstorage pool --online --with-local-disks
