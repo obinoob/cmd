@@ -1,3 +1,30 @@
+# all config files are placed under /etc/pve
+# it is possible to add a repository for maintenance without a subscription.
+
+# deb http://download.proxmox.com/debian/pve buster pve-no-subscription
+# at: /etc/apt/sources.list.d/pve-install-repo.list 
+# comment the following line:
+# #deb https://enterprise.proxmox.com/debian/pve buster pve-enterprise
+# at: /etc/apt/sources.list.d/pve-enterprise.list
+
+# removing the subscription message
+# change to working directory
+cd /usr/share/javascript/proxmox-widget-toolkit
+
+# make file backup
+cp proxmoxlib.js proxmoxlib.js.bak
+
+# edit the file
+nano proxmoxlib.js
+
+# locate this line of code inside the file (use ctrl+w in nano)
+if (data.status !== 'Active') {
+Replace it with this
+if (false) {
+
+# Restart the Proxmox service (also be sure to clear your browser cache, depending on the browser you may need to open a new tab or restart the browser)
+systemctl restart pveproxy.service
+
 ## proxmox shell commands
 
 ## migrates vm to nodeone where target storage is a pool
