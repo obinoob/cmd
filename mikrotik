@@ -11,3 +11,12 @@ put [:resolve sapo.pt server=8.8.4.4]
 
 ## adding ethernet 24 interfaces to bridge named sw ##
 for i from=1 to=24 do={/interface bridge port add bridge=sw interface="ether$i"}
+
+## MTU adjusting ##
+; before any mtu adjustment be sure that mtu discovery is working properly
+; mtu discovery uses ICMP protocol by reaching the remote router
+; it is possible to find the apropriate value for MTU by using: ping remote-ip do-not-fragment size=1500 
+; after find the max transmission unit you can ping with size: ping remote-ip size=65535 and check if fragmentation is working!
+
+ping 192.168.1.1 do-not-fragment size=1500
+ping size=65535
