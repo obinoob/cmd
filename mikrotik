@@ -18,5 +18,8 @@ for i from=1 to=24 do={/interface bridge port add bridge=sw interface="ether$i"}
 ; it is possible to find the apropriate value for MTU by using: ping remote-ip do-not-fragment size=1500 
 ; after find the max transmission unit you can ping with size: ping remote-ip size=65535 and check if fragmentation is working!
 
+; https://wiki.mikrotik.com/wiki/Manual:IP/Firewall/Mangle#Change_MSS
+
 ping 192.168.1.1 do-not-fragment size=1500
 ping size=65535
+
