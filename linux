@@ -1,1 +1,3 @@
+## BGP total number of routes ##
+whois -h riswhois.ripe.net peers | sort -n -k 4
 
