@@ -1,0 +1,8 @@
+bootrec /fixmbr
+bootrec /fixboot
+bootsect/nt60 sys
+bootrec /fixboot
+bcdedit /export c:\bcdbackup
+attrib c:\boot\bcd -h -r -s
+ren c:\boot\bcd bcd.old
+bootrec /rebuildbcd
