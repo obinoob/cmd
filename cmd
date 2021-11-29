@@ -1,3 +1,9 @@
+# find the pid of the process running in the port number (e.g., 8080)
+netstat -ano | findStr "8080"
+
+# find the process name by pid
+tasklist /fi "pid eq 666"
+
 # list running services
 net start
 
