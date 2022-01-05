@@ -1,3 +1,6 @@
+# find manufacturer product / mainboard
+wmic baseboard get product,Manufacturer
+
 # find the pid of the process running in the port number (e.g., 8080)
 netstat -ano | findStr "8080"
 
