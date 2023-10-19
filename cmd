@@ -60,3 +60,6 @@ ping -t -6 google.com
 
 # adding vpn powershell
 Add-VpnConnection -Name "VPN Name" -ServerAddress "domain.com" -TunnelType L2TP -L2tpPsk "SharedSecretKey" -Force -AuthenticationMethod Pap -SplitTunneling $True -EncryptionLevel "Optional"
+
+# Measure DNS round trip powershell
+(Measure-Command {Resolve-DnsName -Name www.google.pt -Server 192.168.0.1 -DnsOnly -NoHostsFile -Type A_AAAA}).TotalMilliseconds
