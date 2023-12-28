@@ -1,0 +1,25 @@
+:local odnsuser "opendns name"
+:local odnspass "opendns password"
+:local odnshost "opendns network name"
+:local nicname  "wan interface name"
+
+:global cidrip
+:global currentip
+:global previousip
+
+:log info "Fetching public interface current ip address..."
+:set $cidrip [/ip address get [find where interface=$nicname] address]
+:set $currentip [:pick $cidrip 0 [:find $cidrip "/"]]
+
+:if ($currentip != $previousip) do={
+	:local url "https://updates.opendns.com/nic/update\3Fhostname=$odnshost"
+	:log info "OpenDNS: Sending update for $odnshost"
+	/tool fetch url=($url) user=$odnsuser password=$odnspass mode=http dst-path=("/netodns.txt")
+	:delay 2
+	:local odnsreply [/file get netodns.txt contents];
+	:log info "OpenDNS ip address update complete is now complete."
+	:log info "OpenDNS reply was $odnsreply"
+	:set $previousip $currentip
+} else={
+	:log info "OpenDNS: The previous ip $previousip and current $currentip ip are equal, no update is needed."
+}
